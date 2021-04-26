@@ -15,7 +15,7 @@ const customStyles = {
   },
 };
 
-function UserTable() {
+function UserTable(props) {
   const [localData, setLocalData] = useState([]);
   const [formData, setFormData] = useState({
     name: "",
@@ -88,10 +88,22 @@ function UserTable() {
     // alert("Data successfully Updated");
   };
 
+  //HOME
+  const homeRedirect = () => {
+    props.history.push("/");
+  };
+
   return (
     <div>
       <br />
-      <h3>USER TABLE</h3>
+      <h3>
+        USER TABLE{" "}
+        <span>
+          <button className="btn btn-dark" onClick={homeRedirect}>
+            ADD MORE
+          </button>
+        </span>
+      </h3>
       <br />
       <table className="table">
         <thead>
