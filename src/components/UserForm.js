@@ -120,6 +120,7 @@ function UserForm(props) {
         {/* CITY */}
         <label>
           <b>City: </b>
+          <br />
 
           <label htmlFor="chd">Chandigarh</label>
           <input
@@ -129,6 +130,7 @@ function UserForm(props) {
             name="city"
             onChange={handleCity}
           />
+          <br />
           <label htmlFor="pchk">Panchkula</label>
           <input
             type="checkbox"
@@ -137,6 +139,7 @@ function UserForm(props) {
             name="city"
             onChange={handleCity}
           />
+          <br />
           <label htmlFor="moh">Mohali</label>
           <input
             type="checkbox"

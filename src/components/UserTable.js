@@ -93,6 +93,11 @@ function UserTable(props) {
     props.history.push("/");
   };
 
+  //CLOSE
+  const closeButton = () => {
+    setIsopen(false);
+  };
+
   return (
     <div>
       <br />
@@ -223,9 +228,17 @@ function UserTable(props) {
                 ))}
 
                 <br />
-                <button className="btn btn-info" onClick={() => handleUpdate()}>
-                  Update
-                </button>
+                <span>
+                  <button
+                    className="btn btn-info"
+                    onClick={() => handleUpdate()}
+                  >
+                    Update
+                  </button>
+                  <button className="btn btn-dark" onClick={closeButton}>
+                    Close
+                  </button>
+                </span>
               </form>
               <br />
             </div>
