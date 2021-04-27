@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash, faPen } from "@fortawesome/free-solid-svg-icons";
 Modal.setAppElement("#root");
+
+//ICONS
 
 //MODAL CUSTOM STYLE
 const customStyles = {
@@ -23,6 +27,10 @@ function UserTable(props) {
     gender: "",
     city: [],
   });
+
+  const deleteIcn = <FontAwesomeIcon icon={faTrash} />;
+  const editIcn = <FontAwesomeIcon icon={faPen} />;
+
   const [array, setArray] = useState([]);
   const [idx, setIdx] = useState(null);
   //modal
@@ -102,11 +110,11 @@ function UserTable(props) {
     <div>
       <br />
       <h3>
-        USER TABLE{" "}
         <span>
           <button className="btn btn-dark" onClick={homeRedirect}>
-            ADD MORE
-          </button>
+            Back
+          </button>{" "}
+          USER TABLE
         </span>
       </h3>
       <br />
@@ -133,18 +141,20 @@ function UserTable(props) {
                     return <p>{c}</p>;
                   })}
                 </td>
-                <button
-                  className="btn btn-warning"
-                  onClick={() => handleEdit(value, index)}
-                >
-                  Edit
-                </button>
-                <button
-                  className="btn btn-danger"
-                  onClick={() => deleteData(index)}
-                >
-                  Delete
-                </button>
+                <td>
+                  <button
+                    className="btn btn-warning"
+                    onClick={() => handleEdit(value, index)}
+                  >
+                    {editIcn}
+                  </button>{" "}
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => deleteData(index)}
+                  >
+                    {deleteIcn}
+                  </button>
+                </td>
               </tr>
             );
           })}
